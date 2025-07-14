@@ -23,4 +23,4 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: 4m01/sr-eks-helm-deploy-action:${GITHUB_REF##*/}
+          tags: 4m01/sr-eks-helm-deploy-action:${{ github.ref_name }}
