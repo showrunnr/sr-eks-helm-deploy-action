@@ -25,5 +25,9 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v6
         with:
+          context: .
           push: true
           tags: sr-eks-helm-deploy-action:main
+          build-args: |
+            GITHUB_TOKEN=${{ secrets.WORKFLOW_TOKEN }}
+            GITHUB_ACTOR=${{ github.actor }}
